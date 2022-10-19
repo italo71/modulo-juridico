@@ -14,3 +14,7 @@ input{
     border: solid 1px lightgray;
     border-radius: 4px;
 }
+
+.col-5 input{
+    width: 90%;
+}
