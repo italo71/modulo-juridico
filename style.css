@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#data_inicial{
+    width: 80%;
+}
+
+#data_final{
+    width: 80%;
+}
+
+input{
+    border: solid 1px lightgray;
+    border-radius: 4px;
+}
