@@ -26,8 +26,8 @@
         <div class="row justify-content-center">
             <div class="card col-12" style="margin-top: 15px;">
                 <div class="row">
-                    <div class="col-10" style="display: inline-block; margin: 5px; padding-bottom: 5px;">
-                        <div class="col-3" style="display: inline-block;">
+                    <div class="col-12" style="display: inline-block; margin: 5px; padding-bottom: 5px;">
+                        <div style="display: inline-block; max-width: 250px; margin-right: 0px;">
                             <div class="col-12" style="display: inline-block;">
                                 <label for="">Data Publicação Inicial</label><br>
                                 <input type="date" name="" id="data_inicial">
@@ -37,7 +37,7 @@
                                 <input type="date" name="" id="data_final">
                             </div>
                         </div>
-                        <div class="col-3" style="display: inline-block;">
+                        <div class="col-3" style="display: inline-block; margin-left: -15px;">
                             <div class="col-12" style="margin-bottom: 25px;">
                                 <select name="" id="tipo" style="width: 100px; height: 26px;">
                                     <option value="">Tipo</option>
@@ -51,13 +51,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-5" style="display: inline-block;">
-                            <div class="col-5" style="display: inline-block; position: absolute; top: 4px;">
+                        <div class="col-4" style="display: inline-block;">
+                            <div class="col-12" style="margin-bottom: 20px;">
                                 <label for="">Conteúdo Publicado</label><br>
-                                <input type="text" name="" id="conteudo_pub">
+                                <input type="text" name="" id="conteudo_pub" style="width: 100%;">
                             </div>
-                            <div class="col-1" style="display: inline-block; position: absolute; top: 76px;">
-                                <button class="btn btn-success" onclick="parent.ebfFlowExecute('Nova Consulta Publicacoes - Filtrar')">Buscar&nbsp;&nbsp;&nbsp;
+                            <div class="col-12">
+                                <button class="btn btn-success" onclick="parent.ebfFlowExecute('Nova Consulta Publicacoes - Filtrar', parent.ebfListParamsCreate(document.getElementById('data_inicial').value, document.getElementById('data_final').value, document.getElementById('tipo').value, document.getElementById('conteudo_pub').value, document.getElementById('escritorio').value))">Buscar&nbsp;&nbsp;&nbsp;
                                     <i class="material-symbols-outlined" style="font-size: 100%;">search</i>
                                 </button>
                             </div>
@@ -181,7 +181,7 @@
                                 <label for="">Observações</label><br>
                                 <textarea name="" id="observacoes" cols="30" rows="3" disabled></textarea>
                             </div>
-                            <div class="" style="position: absolute; bottom: 12px; left: 390px;">
+                            <div class="col-5" style="position: absolute; bottom: 12px; left: 390px;">
                                 <button class="btn btn-secondary" style="padding: 3px 5px;" onclick="editarObs()">
                                     <i class="material-symbols-outlined">
                                         add
