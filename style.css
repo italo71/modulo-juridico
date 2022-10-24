@@ -22,3 +22,8 @@ input{
 .col-6 input, .col-6 textarea{
     width: 90%;
 }
+
+select{
+    border: solid 1px lightgray;
+    border-radius: 4px;
+}

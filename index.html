@@ -79,124 +79,256 @@
                                 <th scope="col" class="th_table">Vara</th>
                                 <th scope="col" class="th_table">Sigla</th>
                                 <th scope="col" class="th_table">UF</th>
-                                <th scope="col" class="th_table">teste</th>
+                                <th scope="col" class="th_table">Visualizar</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr></tr>
+                        <tbody id="tabela_body">
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <button class="btn btn-success">teste</button>
+    <button class="btn btn-success" onclick="exibeModal()">teste</button>
 
-    <div class="modal" style="z-index: 99999; display: block;">
+
+    <!-- Modal para exibir as informações -->
+    <div class="modal" id="modal" style="z-index: 9999;">
         <div class="row justify-content-center" style="margin-top: 15px;">
-            <div class="card col-10" style="display: inline-block; padding: 5px;">
-                <button class="btn btn-danger" style="position: abso
-                lute; top: 5px; right: 10px;">Fechar</button>
-                <div class="col-12">
+            <div class="card col-10" style="display: inline-block; padding: 5px; padding-left: 30px;">
+                <button class="btn btn-danger" id="btn_modal" style="position: absolute; bottom: 5px; right: 10px;"
+                    onclick="escondeModal()">Fechar</button>
+                <div class="col-12 justify-content-center">
                     <div class="col-2" style="display: inline-block;">
                         <label for="">Cod. Publicação</label><br>
-                        <input type="text" id="cod_punlicacao">
+                        <input type="text" id="cod_publicacao" disabled>
                     </div>
                     <div class="col-2" style="display: inline-block;">
                         <label for="">Data Publicação</label><br>
-                        <input type="text" id="data_publicacao">
+                        <input type="text" id="data_publicacao" disabled>
                     </div>
                     <div class="col-2" style="display: inline-block;">
                         <label for="">Data Dispinibilizada</label><br>
-                        <input type="text" id="data_dispo">
+                        <input type="text" id="data_dispo" disabled>
                     </div>
                     <div class="col-3" style="display: inline-block;">
                         <label for="">Nº Processo</label><br>
-                        <input type="text" id="n_processo">
+                        <input type="text" id="n_processo" style="width: 100%;" disabled>
+                    </div>
+                    <div class="col-2" style="margin-top: 21px; margin-left: 32px; margin-right: -74px;"">
+                        <div class="col-2" style="display: inline-block;">
+                            <button class="btn btn-success" style="padding: 3px 5px;"
+                                onclick="parent.ebfFlowExecute('Abrir Formulario - Cadastrar novo processo')"><i
+                                    class="material-symbols-outlined">
+                                    description
+                                </i></button>
+                        </div>
+                        <div class="col-2" style="display: inline-block;">
+                            <button class="btn btn-success" style="padding: 3px 5px;"
+                                onclick="parent.ebfFlowExecute('Abrir Formulario - novo - agenda juridico')"><i
+                                    class="material-symbols-outlined">
+                                    calendar_month
+                                </i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="col-5" style="float: left;">
                         <div class="col-12">
                             <label for="">Vara</label><br>
-                            <input type="text" id="vara">
+                            <input type="text" id="vara" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Comarca</label><br>
-                            <input type="text" id="comarca">
+                            <input type="text" id="comarca" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Orgão</label><br>
-                            <input type="text" id="orgao">
+                            <input type="text" id="orgao" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Nome Diário</label><br>
-                            <input type="text" id="nome_diario">
+                            <input type="text" id="nome_diario" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Sigla Diário</label><br>
-                            <input type="text" id="sigla_diario">
+                            <input type="text" id="sigla_diario" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Esfera Diário</label><br>
-                            <input type="text" id="esfera_diario">
+                            <input type="text" id="esfera_diario" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Nº Edição</label><br>
-                            <input type="text" id="n_edicao">
+                            <input type="text" id="n_edicao" disabled>
                         </div>
                         <div class="col-12">
-                            <div class="col-3" style="display: inline-block;">
+                            <div class="col-5" style="display: inline-block;">
                                 <label for="">Estado</label><br>
-                                <input type="text" id="estadp">
+                                <input type="text" id="estado" disabled>
                             </div>
-                            <div class="col-2" style="display: inline-block;">
+                            <div class="col-2" style="display: inline-block; margin-left: -12px;">
                                 <label for="">UF</label><br>
-                                <input type="text" name="" id="UF">
+                                <input type="text" name="" id="UF" disabled>
                             </div>
                             <div class="col-4" style="display: inline-block;">
                                 <label for="">OAB</label><br>
-                                <input type="text" name="" id="oab">
+                                <input type="text" name="" id="oab" disabled>
                             </div>
                         </div>
-                        <div class="col-10">
-                            <label for="">Observações</label><br>
-                            <textarea name="" id="observacoes" cols="30" rows="10"></textarea>
+                        <div class="col-12">
+                            <div class="col-10" style="display: inline-block;">
+                                <label for="">Observações</label><br>
+                                <textarea name="" id="observacoes" cols="30" rows="3" disabled></textarea>
+                            </div>
+                            <div class="" style="position: absolute; bottom: 12px; left: 390px;">
+                                <button class="btn btn-secondary" style="padding: 3px 5px;" onclick="editarObs()">
+                                    <i class="material-symbols-outlined">
+                                        add
+                                    </i></button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6" style="float: right;">
                         <div class="col-12">
                             <label for="">Conteúdo Publicado</label><br>
-                            <textarea name="" id="conteudo_publicado" cols="30" rows="10"></textarea>
+                            <textarea name="" id="conteudo_publicado" cols="30" rows="5" disabled></textarea>
                         </div>
                         <div class="col-12">
                             <label for="">Nome Pesquisado</label><br>
-                            <input type="text" id="nome_pesquisado">
+                            <input type="text" id="nome_pesquisado" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Termo Pesquisado</label><br>
-                            <input type="text" id="termo_pesquisado">
+                            <input type="text" id="termo_pesquisado" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Perfil Contratante</label><br>
-                            <input type="text" id="perfil_contratante">
+                            <input type="text" id="perfil_contratante" disabled>
                         </div>
                         <div class="col-12">
                             <label for="">Outros Termos encontrados</label><br>
-                            <textarea name="" id="outros_termos" cols="30" rows="10"></textarea>
+                            <textarea name="" id="outros_termos" cols="30" rows="5" disabled></textarea>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de edição da observação -->
+        <div class="modal" id="obs_modal" style="z-index: 99999; position: absolute; top: 25%; max-height: 250px;">
+            <div class="row">
+                <div class="card col-3 justify-content-center" style="padding: 20px;margin: 0 calc(36% + 10px);">
+                    <div class="justify-content-center" style="margin-bottom: 5px;">
+                        <span>Informe a Observação</span>
+                    </div>
+                    <textarea name="" id="obs_edit" cols="15" rows="5"></textarea>
+                    <div class="col-12" style="min-height: 25px;">
+                        <button class="btn btn-success" style="position: absolute; right: 20px; bottom: 7px;"
+                            onclick="salvarObs(1)">Salvar</button>
+                        <button class="btn btn-secondary" style="position: absolute; right: 93px; bottom: 7px;"
+                            onclick="salvarObs(0)">Cancelar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        window.onload = () => {
+        table_exec = () => {
             j('#tabela').DataTable();
             j('#tabela').DataTable().clear();
             j('#tabela').DataTable().rows().invalidate().draw();
             j('#tabela').DataTable().destroy();
+            var tabela_default_order = [0, "asc"];
+            var table = j('#tabela').DataTable({
+                fixedHeader: false,
+                "autoWidth": false,
+                "order": [tabela_default_order],
+                "ordering": true,
+                "scrollX": true,
+                "scrollY": "50vh",
+                "scrollCollapse": false,
+                "paging": true,
+
+                "language": datatable_pt_br,
+                "lengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                "pageLength": 50
+            });
         }
+
+        /* Obtenção das constantes */
+        const divModal = document.getElementById('modal');
+        const btnModal = document.getElementById('btn_modal');
+        const obsModal = document.getElementById('obs_modal');
+        const obsTextArea = document.getElementById('observacoes');
+        const obsInput = document.getElementById('obs_edit');
+        const dataInicial = document.getElementById('data_inicial');
+        const dataFinal = document.getElementById('data_final');
+        const tipo = document.getElementById('tipo');
+        const escritorio = document.getElementById('escritorio');
+        const conteudoPub = document.getElementById('conteudo_pub');
+
+        function escondeModal() {/* esconde modal de exibição das informações */
+            if (obsModal.style.display == 'block') {/* caso o modal de edição da observação ainda esteja aberto é exibida uma mensagem de erro */
+                parent.ebfFlowExecute('Geral - Sweet Alert Notificar', parent.ebfListParamsCreate(0, 'Salve as alterações antes de prosseguir', 3, 2000))
+            }
+            else {
+                divModal.style.display = 'none';
+                btnModal.style.display = 'none';
+            }
+        }
+
+        function exibeModal() {/* exibe modal de exibição das informções */
+            divModal.style.display = 'block';
+            btnModal.style.display = 'block';
+            parent.ebfFlowExecute('Geral - Sweet Alert Notificar', parent.ebfListParamsCreate())
+
+        }
+
+        function editarObs() {/* abre modal de edição da observação e altera o valor do input para o que ja está presente no TextArea */
+            obsInput.value = obsTextArea.value;
+            obsModal.style.display = 'block';
+        }
+
+        function salvarObs(tipo) {/* fecha modal de edição da observação e altera o valor do TextArea para o valor que foi inserido/editado no input do modal */
+            if (tipo == 1) {
+                obsTextArea.value = obsInput.value;
+            }
+            obsModal.style.display = 'none';
+        }
+
+        function filtrar() {
+            parent.ebfFlowExecute('Nova Consulta Publicacoes - Filtrar', parent.ebfListParamsCreate(dataInicial.value, dataFinal.value, tipo.value, conteudoPub.value, escritorio.value))
+        }
+
+        function preencherDados(lista) {
+            document.getElementById('cod_publicacao').value = lista/* [] */;
+            document.getElementById('data_publicacao').value = lista/* [] */;
+            document.getElementById('data_dispo').value = lista/* [] */;
+            document.getElementById('n_processo').value = lista/* [] */;
+            document.getElementById('vara').value = lista/* [] */;
+            document.getElementById('comarca').value = lista/* [] */;
+            document.getElementById('orgao').value = lista/* [] */;
+            document.getElementById('nome_diario').value = lista/* [] */;
+            document.getElementById('sigla_diario').value = lista/* [] */;
+            document.getElementById('esfera_diario').value = lista/* [] */;
+            document.getElementById('n_edicao').value = lista/* [] */;
+            document.getElementById('estado').value = lista/* [] */;
+            document.getElementById('UF').value = lista/* [] */;
+            document.getElementById('oab').value = lista/* [] */;
+            document.getElementById('observacoes').value = lista/* [] */;
+            document.getElementById('conteudo_publicado').value = lista/* [] */;
+            document.getElementById('nome_pesquisado').value = lista/* [] */;
+            document.getElementById('termo_pesquisado').value = lista/* [] */;
+            document.getElementById('perfil_contratante').value = lista/* [] */;
+            document.getElementById('outros_termos').value = lista/* [] */;
+        }
+
+        obsInput.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                salvarObs(1)
+            }
+        });
     </script>
 
     <!-- Jquery Core Js -->
