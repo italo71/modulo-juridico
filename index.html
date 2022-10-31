@@ -90,8 +90,6 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-success" onclick="exibeModal()">teste</button>
-
 
     <!-- Modal para exibir as informações -->
     <div class="modal" id="modal" style="z-index: 9999;">
@@ -251,6 +249,7 @@
             textoCopiado.select();
             document.execCommand("copy");
             textoCopiado.style.display = 'none'
+            parent.ebfFlowExecute('Geral - Sweet Alert Notificar', parent.ebfListParamsCreate(2, 'Texto copiado', 3, 1000))
         }
 
         table_exec = () => {
