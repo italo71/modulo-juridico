@@ -309,6 +309,7 @@
         function editarObs() {/* abre modal de edição da observação e altera o valor do input para o que ja está presente no TextArea */
             obsInput.value = obsTextArea.value;
             obsModal.style.display = 'block';
+            document.getElementById('obs_edit').select();
         }
 
         function salvarObs(tipo) {/* fecha modal de edição da observação e altera o valor do TextArea para o valor que foi inserido/editado no input do modal */
