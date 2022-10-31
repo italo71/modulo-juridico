@@ -228,13 +228,16 @@
                     <div class="justify-content-center" style="margin-bottom: 5px;">
                         <span>Informe a Observação</span>
                     </div>
-                    <textarea name="" id="obs_edit" cols="15" rows="5"
-                        style="min-height: 95px;margin: 0 !important;"></textarea>
-                    <div class="col-12" style="min-height: 0x;max-height: 51px;">
-                        <button class="btn btn-success" style="position: absolute; right: 20px; bottom: 7px;"
-                            onclick="salvarObs(1)">Salvar</button>
-                        <button class="btn btn-secondary" style="position: absolute; right: 93px; bottom: 7px;"
-                            onclick="salvarObs(0)">Cancelar</button>
+                    <div class="col-12">
+                        <textarea name="" id="obs_edit" cols="15" rows="5"
+                            style="min-height: 95px;margin: 0 !important; min-width: 100%;"></textarea>
+                    </div>
+                    <div class="col-12"
+                        style="min-height: 0x;max-height: 51px; position: absolute; right: 20px; bottom: 7px;">
+                        <div style="float: right;">
+                            <button class="btn btn-secondary" onclick="salvarObs(0)">Cancelar</button>
+                            <button class="btn btn-success" onclick="salvarObs(1)">Salvar</button>
+                        </div>
                     </div>
                 </div>
             </div>
